@@ -16,30 +16,16 @@ int binarySearch(const int arr[], int left, int right, int target) {
     return -1;
 }
 
-void insertionSort(int arr[], int size) {
-    for (int i = 1; i < size; i++) {
-        int key = arr[i];
-        int j = i - 1;
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
-    }
-}
-
 int main() {
     int size;
-    cout << "Enter the size of the array: ";
+    cout << "Enter the size of the sorted array: ";
     cin >> size;
 
     int* arr = new int[size];
-    cout << "Enter " << size << " elements in the array:" << endl;
+    cout << "Enter " << size << " elements in the sorted array:" << endl;
     for (int i = 0; i < size; i++) {
         cin >> arr[i];
     }
-
-    insertionSort(arr, size);
 
     int target;
     cout << "Enter the element to search for: ";
@@ -51,8 +37,6 @@ int main() {
     } else {
         cout << "Element not found in the array." << endl;
     }
-
-    delete[] arr;
 
     return 0;
 }
